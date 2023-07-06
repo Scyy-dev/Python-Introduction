@@ -100,9 +100,10 @@ learning to be a Python programmer.
 
 <br><br>
 
-# Storing Data
+# Working with Data
 
-When working with code, an important part of the code is to store data. Data comes in many different shapes and sizes,
+When working with code, an important part of the code is to store and manipulate data. Data comes in many different
+shapes and sizes,
 so we'll learn about how we can store data and the different *data types* there are.
 
 <br>
@@ -143,3 +144,192 @@ We've now put a variable to use! Go us!
 ### Data Types!
 
 Now we know how to *store* data, we need to figure out *what* it is we're actually storing.
+
+There are quite a number of data types in Python, and the topic can get complicated fast. So we're going to keep it
+simple and straightforward.
+
+Number - the numbers you're familiar with from math.
+String - text, symbols and characters. We've seen this already with our `Hello, world!`
+Boolean - a true/false value. Very useful for logic - we'll see lots of this later!
+
+Lets try using all of them, all at once!
+
+```python
+my_num = 5
+my_string = "World, hello!"
+my_boolean = True
+```
+
+Whew! There's more complicated data types to cover, but for now we can get pretty far with these.
+
+<br>
+
+### Operations!
+
+We have a way to *store* data, and we know *what* the data is, but what do we actually *do* with the data?
+
+Introducing operations! They create ways for the data to interact with each other.
+
+Most of these come from Math - they should all look or sound very familiar!
+
+* Addition - adds 2 variables together. `var_1 + var_2`
+* Subtraction - subtracts right variable from the left variable. `var_1 - var_2`
+* Multiplication - multiplies 2 variables together. `var_1 * var_2`
+* Division - divides right variable from the left variable. `var_1 / var_2`
+
+Operations don't have to apply
+
+```python
+result = 10 * 5
+next_result = result / 5
+final_result = next_result + 2
+```
+
+<br>
+
+### Comments!
+
+Sometimes, you want to write helpful messages in your code without writing actual code. This is a very common thing, and
+it's called code commenting! Code comments are a great way to explain what's going on in the code if it's hard to read
+or understand.
+
+Comments in Python are done using the `#` symbol. Anything written after the `#` symbol is *completely ignored* when the
+program runs.
+
+```python
+print("Hello, world!")  # This is a comment! It will never be treated as code!
+
+my_var = '5'  # Fun fact! Numbers can be strings too if they're in between quotation marks / apostrophes!
+```
+
+<br><br>
+
+# Our Second Program!
+
+We're going to tackle a harder project now. Using everything we've learned so far, plus 2 new functions, we're going to
+make a *simple calculator*.
+
+<br>
+
+### How it works
+
+Our calculator program will work like so:
+
+1. The program asks the user to enter a number
+2. The program asks the user to enter another number
+3. The program calculates the sum of the 2 numbers
+4. The program prints the result of the calculation
+
+There's a lot to unpack there! We'll take it step-by-step so we can get this program done.
+
+<br>
+
+### Step 1: Asking for a number
+
+The first step requires us to understand how Python gets user input. This involves using a brand new function:
+the `input` function!
+
+The `input` function prints a message to the console (just like the `print` function!) but then also waits for the user
+to type something into the console. When the user hits enter, the *string* that the user typed into the console is then
+*returned* from the function.
+
+That sounds really confusing compared to what we've done so far, so lets see it in action:
+
+```python
+user_input = input("Please type something:")  # Try typing something when your program runs
+print(user_input)  # What you just typed will be printed!
+```
+
+So for example, say I type `hello` in the console when the program runs, and then hit enter. `hello` will be printed
+back at me!
+
+<br>
+
+Now let's try asking for a number.
+
+```python
+num1 = input("Please enter a number:")
+```
+
+Great! We've got our program to *ask the user to enter a number*. Step 1 done!
+
+<br>
+
+### Step 2: Asking for another number
+
+We've done this already! This should be as easy as copy-paste, and tweaking it slightly. An important thing to know is
+that if we don't change the variable name, we'll overwrite what was in the variable!
+
+Think of it as putting something in the box when there is something there already magically deletes what was there
+already.
+
+You can see this in action:
+
+```python
+my_var = 5
+my_var = 6
+print(my_var)  # we get 6. The 5 went *poof*
+```
+
+So now when we copy-paste that code, let's make sure we get it right:
+
+```python
+num1 = input("Please enter a number:")
+num2 = input("Please enter a number:")
+```
+
+Good stuff! Step 2 done: *ask the user to enter another number*.
+
+<br>
+
+### Step 3: Calculate the sum
+
+We now need to calculate the sum of the 2 numbers. To get the sum of the 2 numbers, we have to *add* them together.
+
+Using our previous knowledge of operators, we use the `+` symbol for add, and we want to add the 2 variables we used
+earlier (`num1` and `num2`)
+
+Our code should now look like this:
+
+```python
+num1 = input("Please enter a number:")
+num2 = input("Please enter a number:")
+result = num1 + num2
+```
+
+<br>
+
+### Step 4: Print the Output
+
+We've done the input, we've done the calculation, now we need the output!
+
+We use the `print` function we're familiar with now to do that. Let's print the result!
+
+```python
+num1 = input("Please enter a number:")
+num2 = input("Please enter a number:")
+result = num1 + num2
+print(result)
+```
+
+Now let's try running it! I'm going to try a simple 1 + 1.
+
+Uh oh. That's not good.
+
+<br>
+
+### Operators on Strings
+
+We encountered an interesting issue - when we tried `1` + `1`, we got `11`! That's not right at all! Even in binary it's
+not right!
+
+The issue comes from the *data types* we're working with.
+
+The `input` function gives us Strings. but we don't want strings! We want numbers!
+
+To fix this, we need to convert the strings to numbers. To do this, we use a new function, called `float`.
+
+This function converts the value given to a float, which is a specific type of number that supports decimal points (
+e.g. `3.14`)
+
+
