@@ -21,7 +21,7 @@ else:
     print("You're too young!")
 
 # Project 4
-for countdown in range(10, 1, -1):
+for countdown in range(10, 0, -1):
     print(str(countdown) + "!")
 print("Liftoff!")
 
