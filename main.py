@@ -28,6 +28,8 @@ print("Liftoff!")
 countdown = 10
 while countdown > 0:
     print(str(countdown) + "!")
+    countdown -= 1
+print("Liftoff!")
 
 # Project 5
 while True:
